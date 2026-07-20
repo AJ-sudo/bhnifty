@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Icon from './Icon'
 
 const links = [
@@ -11,7 +12,7 @@ const links = [
 export default function Navbar({ isDark, onToggleTheme }) {
   return (
     <nav className="sticky top-0 bg-bg-navbar/95 backdrop-blur-md border-b border-border-default/40 h-20 flex items-center justify-between px-6 md:px-12 z-50 transition-colors duration-300">
-      <a className="flex items-center space-x-3" href="/">
+      <Link className="flex items-center space-x-3" to="/">
         <img
           className="h-10 w-auto object-contain animate-[fadeIn_0.2s_ease-out]"
           alt="Bhnifty Logo"
@@ -20,7 +21,7 @@ export default function Navbar({ isDark, onToggleTheme }) {
         <span className="text-xl font-black tracking-tight text-text-primary select-none animate-[fadeIn_0.2s_ease-out]">
           BHNifty
         </span>
-      </a>
+      </Link>
 
       <div className="hidden lg:flex items-center space-x-8 text-sm font-bold text-text-secondary">
         {links.map((l) => (
@@ -43,12 +44,12 @@ export default function Navbar({ isDark, onToggleTheme }) {
             <Icon name="moon" className="w-5 h-5 text-slate-600 transition-transform duration-300 hover:-rotate-12" />
           )}
         </button>
-        <a
+        <Link
           className="bg-[#D43B0C] hover:bg-[#D43B0C]/90 text-white font-bold py-2.5 px-5 rounded-xl shadow-lg shadow-[#D43B0C]/20 hover-scale text-sm"
-          href="/login"
+          to="/login"
         >
           Sign In
-        </a>
+        </Link>
       </div>
     </nav>
   )

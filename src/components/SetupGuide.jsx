@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Icon from './Icon'
 
 const steps = [
@@ -58,13 +59,13 @@ export default function SetupGuide() {
             </div>
 
             <div className="mt-5">
-              <a
+              <Link
                 className="inline-flex items-center gap-2 bg-[#D43B0C] hover:bg-[#C4370B] transition-all text-white font-bold px-6 py-2.5 rounded-xl shadow-lg shadow-[#D43B0C]/20 text-sm"
-                href="/login"
+                to="/login"
               >
                 Start Monitoring
                 <Icon name="arrow-up-right" className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

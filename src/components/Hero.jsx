@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Icon from './Icon'
 
 const statCards = [
@@ -55,19 +56,19 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 pt-2">
-          <a
+          <Link
             className="bg-[#D43B0C] hover:bg-[#D43B0C]/90 text-white font-bold py-3.5 px-7 rounded-xl shadow-lg shadow-[#D43B0C]/20 flex items-center justify-center space-x-2 hover-scale text-base"
-            href="/login"
+            to="/login"
           >
             <span>Sign In to Dashboard</span>
             <Icon name="arrow-up-right" className="w-4 h-4" />
-          </a>
-          <a
+          </Link>
+          <Link
             className="bg-bg-card border border-border-default hover:bg-bg-secondary text-text-primary font-bold py-3.5 px-7 rounded-xl shadow-sm flex items-center justify-center space-x-2 hover-scale text-base transition-colors duration-300"
-            href="/login"
+            to="/login"
           >
             <span>Explore Platform</span>
-          </a>
+          </Link>
         </div>
 
         <div className="flex flex-wrap gap-x-6 gap-y-3 pt-4 border-t border-border-default/40">
