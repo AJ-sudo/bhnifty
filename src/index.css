@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* Class-based dark mode (matches the original site's <html class="dark"> strategy) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", Inter, system-ui, -apple-system, sans-serif;
+
+  /* Semantic color tokens -> resolve to CSS variables that flip per theme */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  --color-bg-sidebar: var(--bg-sidebar);
+  --color-bg-navbar: var(--bg-navbar);
+  --color-border-default: var(--border-default);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+}
+
+/* Light theme (default) */
+:root {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: #fff;
+  --bg-elevated: #f8fafc;
+  --bg-sidebar: #1e2329;
+  --bg-navbar: #fff;
+  --border-default: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-disabled: #94a3b8;
+}
+
+/* Dark theme */
+.dark {
+  --bg-primary: #0b1220;
+  --bg-secondary: #111827;
+  --bg-card: #1e293b;
+  --bg-elevated: #273449;
+  --bg-sidebar: #0f172a;
+  --bg-navbar: #111827;
+  --border-default: #334155;
+  --border-hover: #475569;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-disabled: #64748b;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #d43b0c;
+  color: #fff;
+}
+
+/* Subtle lift on hover, used by CTAs and cards */
+.hover-scale {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover-scale:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
